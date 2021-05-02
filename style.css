@@ -1,0 +1,140 @@
+/* Mobile view */
+
+/* Global styles  */
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+html{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Header Style */
+header{
+    background: linear-gradient(to right, lightblue, slateblue);
+    border: none;
+    box-shadow: 0 0 5px black;
+    z-index: 1;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+/* Style the header Logo */
+header nav .logo{
+    /* align-self: center; */
+    /* text-align: center; */
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-large;
+    /* margin-left: 5px; */
+    margin: auto;
+    padding: 0.5em;
+}
+
+/* The header links */
+header nav .nav-links{
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 0;
+    transition: 0.5s;
+}
+
+header nav .nav-links .close-btn{
+        display: none;
+}
+
+header nav .nav-links a{
+    color: whitesmoke;
+    padding: 1em;
+}
+
+header nav .nav-links a:hover{
+    background: rgb(72, 61, 139, .2);
+}
+
+/* The header menu-button, icon */
+header nav .menu-btn{
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    cursor: pointer;
+}
+
+header nav .menu-btn .menu-icon::before{
+    content: "\2630";
+    color: white;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+header nav .menu-btn:hover{
+    text-shadow: 0 0 1px white;
+}
+
+/* Tab View */
+@media screen and (min-width: 500px){
+    /* Transform the header nav-links to a side-bar */
+
+    header nav .nav-links{
+        height: 100%;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 2;
+        background: linear-gradient( skyblue, slateblue);
+        width: 0%;
+        text-align: center;
+        box-shadow: 0 0 5px black;
+        overflow: hidden;
+    
+    }
+
+    header nav .nav-links .close-btn{
+        display: inline;
+        position: relative;
+        cursor: pointer;
+        text-align: left;
+        margin: 0.5em;
+        font-size: x-large;
+        color: darkslateblue;
+    }
+
+}
+
+/* Desktop View */
+@media screen and (min-width: 760px){
+    header nav{
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    header nav .logo{
+        margin: 0;
+    }
+
+    header nav .nav-links{
+        flex-direction: row;
+        width: initial;
+        position: relative;
+        background: inherit;
+        box-shadow: 0 0 0 ;
+    }
+
+    header nav .nav-links .close-btn, header nav .menu-btn{
+        display: none;
+    }
+
+}
